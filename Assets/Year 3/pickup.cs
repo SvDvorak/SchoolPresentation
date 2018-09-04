@@ -60,7 +60,7 @@ public class pickup : MonoBehaviour
 
                 var input = GetRotateInput();
                 _rotation.x -= input.x;
-                _rotation.y = Mathf.Clamp(_rotation.y - input.y, -90, 90);
+                _rotation.y = Mathf.Clamp(_rotation.y - input.y, -180, 180);
                 var upDownRotation = Quaternion.AngleAxis(-_rotation.y, transform.right);
                 targetRotation = upDownRotation * transform.rotation * _pickupRotation * Quaternion.Euler(0, _rotation.x, 0);
 
