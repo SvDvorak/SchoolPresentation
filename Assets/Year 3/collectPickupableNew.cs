@@ -24,24 +24,11 @@ public class collectPickupableNew : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         // TODO FIX
-        if (IsPickupable(other))
-        {
-            _collectedItems.Add(other.attachedRigidbody);
-
-            if(_collectedItems.Count == ExpectedCount)
-            {
-                Stairs.ActivateMoveStairs();
-            }
-        }
     }
 
     public void OnTriggerExit(Collider other)
     {
         // TODO FIX
-        if (IsPickupable(other))
-        {
-            _collectedItems.Remove(other.attachedRigidbody);
-        }
     }
 
     private bool IsPickupable(Collider other)
