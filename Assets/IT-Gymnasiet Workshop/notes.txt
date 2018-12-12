@@ -1,0 +1,164 @@
+https://kenney.nl/assets/nature-kit
+https://kenney.nl/assets/3d-characters
+
+
+Unity
+Räknar med att ni har installerat
+
+För mer hjälp
+https://docs.unity3d.com
+https://unity3d.com/learn/tutorials
+
+UI
+    Scen, game object hierarki, inspektor, assets
+    Scen
+        Högerklick = flyg (WASD)
+        Scroll = zoom
+        Scrollklick = panorera
+        Alt = spin runt punkt
+        Vänsterklick = standard selektion (med box)
+
+        2D eller 3D (knapp & Persp/Iso)
+        Rotera riktning (X/Y/Z)
+
+    Hierarki
+        Skapa spelobjekt
+        Förflytta (enligt ett plan), rotera, skala, bounds & allt
+        Parenting
+        Databärare med logik
+    
+    Inspect
+        Transform
+            1 enhet = 1 meter
+        Komponenter
+            Grafik, ljud, kod (C#), partiklar
+        Aktivt vald(a) objekt
+
+    Game
+        Spela, stoppa & stega frame
+
+    Project
+        Alla spelets filer
+        Assets mapp viktigt, inte samma som projektmappen!
+        (visa lite)
+
+Asset Store
+    Mycket färdigt, bara att använda
+    Har ofta egna instruktioner men slipper göra själv
+    Olika paket kommer inte bara funka direkt med varandra, kan kräva tweakande
+
+Mesh
+    Renderer, importera FBX
+    Generate colliders (om du ska ha fysik)
+    Rig (generic antagligen, humanoid för människa men arbete att skapa egen)
+    Animations (korta klipp, men MÅSTE använda animeringar på ben)
+    Materials
+        Färg & yta
+        Autoimport, kan skapa egna
+        Standard bra
+            albedo = färg eller bild
+            metallic (hur mycket metall, oftast 0 eller 1 typ)
+            smoothness = hur jämn ytan är (ljus delar på sig annars)
+            normal map & occlusion överkurs, fråga senare
+    Bara dra in modell. Dra material på modell för färg
+
+
+Sprites
+    JPG, PNG, etc
+    Texture type som Sprite
+    Sprite renderer
+        Color tint
+        Order in layer (överlappande sprites)
+    Animering, använd spritesheet
+        Massa bilder efter varandra
+        Sätt mode multiple
+        Splitta up i sprite editor
+        Dra ut i scenen och skapa animeringsklipp (kommer till det sen)
+
+Cameras & lighting
+    Projektion (orto & perspektiv) (2D/isometric & 3D typ)
+    Typer av ljus
+        Directional = solljus, bara riktning
+        Point light, spotlight, area light
+    Färg, intensitet, range
+    Kör realtime... försiktig med antal ljus bara
+        för mycket att sätta in sig i baking (och tar för mycket tid)
+
+Audio
+    Ljudklipp
+    Loop för musik
+    Play On Awake
+    Koda start
+
+Fysik
+    Colliders, olika former
+    FINNS VARIANTER FÖR ATT JOBBA I 2D!!!
+    Static & dynamic
+        Static = kan vara mesh men fast. Dynamic = kan röra på sig och vara tyngda men måste ha simplare collider
+        För dynamic använd convex = true på collider eller lägg till flera boxar/sfärer/etc för dynamic
+    Rigidbodies
+        Gravity (visa var)
+        Mass (hur saker interagerar med varandra)
+        Drag (slöar ned)
+        Kinematic
+        Constraints, användbart!
+
+        SKALA SPELAR STOR ROLL!
+
+Animationer
+    Animation clip
+    Animator
+    Animation controller
+        States
+
+Partiklar
+    OTROLIGT många inställningar
+    Basics
+        Duration
+        Start lifetime, speed, size & rotation
+        (SKIPPA?) Simulation space World
+    Emission
+    Shape
+    Går att sätta curves & random range på ALLT
+    Renderer (LÄÄÄNGST ner)
+        Byt material till en med den textur du vill ha
+
+Prefabs
+    Återanvändning!
+    Blir blå, är kopplade då
+    Ändra på objekt, apply och alla får samma ändring
+        *om de inte själva ändrat det*
+    Går inte ha prefabs i prefabs (och de länkas till rätt prefab)
+
+Input
+    Finns en massa standard-värden
+    KRÅNGLIGT med många spelare som standard
+    Project Settings -> Input
+    Axis & button, samma grej men första använder negativa knappar
+    Alternative button
+
+UI
+    Canvas först
+        GIGANTISKT, tyvärr. Kör 1 unit = 1 pixel
+    Knappar
+        Text & on click
+    Text
+        Kan bli suddigt, bättre att använda TextMeshPro men kräver import och generera font
+    Paneler
+        Gruppera. Bra för att ha frame för flera andra element
+        Lägg UI element i det (dvs, child)
+    Skärm-form-faktor, anta 16:9 för det här (ganska bökigt annars)
+
+Dela projekt
+    Dropbox funkar nog... VARNING FÖR ATT ÄNDRA SAMMA FILER SAMTIDIGT
+    Kommunicera
+    Jobba INTE i samma scen
+    Ändra Project Settings -> Editor "Visible Meta Files" & Asset Serialization "Force Text"
+
+Kod
+    C# med Visual Studio
+    Debug.Log("Loggar detta")
+
+    Tags & Layers
+
+Kompilera ihop spel
